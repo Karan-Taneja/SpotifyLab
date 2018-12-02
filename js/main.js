@@ -123,6 +123,7 @@ input.addEventListener('input', () => {
 
             if (artists[j].toLowerCase().includes(input.value.toLowerCase()) === true) {
               arr.push(playlist.songs[i]);
+              break;
             }
 
           }
