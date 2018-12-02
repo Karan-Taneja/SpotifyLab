@@ -8,6 +8,11 @@ body {
   background-color: transparent;
 }
 
+.jumbotron {
+  padding-bottom: 0;
+  margin-bottom: 2%;
+}
+
 .song-name {
   font-size: 0.9rem;
 }
@@ -17,7 +22,16 @@ body {
   color: rgba(255, 255, 255, 0.4);
 }
 
-
 .row:hover {
   background-color: #383838;
+}
+
+.searchBar {
+  width: 42%;
+  border-radius: 15px;
+  border: 1px #000 solid;
+  padding: 5px 5px 5px 10px;
+  z-index: 10;
+  border-radius: 25px;
+  border: none;
 }
