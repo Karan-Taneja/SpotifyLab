@@ -141,6 +141,6 @@ input.addEventListener('input', () => {
 input.addEventListener('keydown', (event) => {
     if(event.key === 'Enter'){
         input.value ='';
+        render(playlist);
     }
-    render(playlist);
 });
