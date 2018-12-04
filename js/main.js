@@ -71,15 +71,16 @@ const playlist = {
 };
 
 const objectToHTML = (song) => {
-  return `<div class='row mb-2'>
-  <div class='col-1'>
-    <img src="${song.image}" class="rounded" style='width: 50px; height: 50px;'>
-  </div>
-  <div class='col-11'>
-    <p class='mb-0 mt-1 song-name'>${song.name}</p>
-    <p class='my-0 song-artists'>${song.artists}</p>
-  </div>
-</div>`;
+  return `
+  <div class='row mb-2'>
+    <div class='col-1'>
+      <img src="${song.image}" class="rounded" style='width: 50px; height: 50px;'>
+    </div>
+    <div class='col-11'>
+      <p class='mb-0 mt-1 song-name'>${song.name}</p>
+      <p class='my-0 song-artists'>${song.artists}</p>
+    </div>
+  </div>`;
 }
 
 const render = (playlist) => {
@@ -108,7 +109,10 @@ const input = document.querySelector('.js-input')
 input.addEventListener('input', () => {
 
     let arr = [];
-    let newPlayList = {};
+    let newPlayList = {
+      name: 'United States Top 10',
+      description: 'The top songs in the US right now.',
+    };
 
     for (let i = 0; i < playlist.songs.length; i++) {
       
@@ -116,7 +120,7 @@ input.addEventListener('input', () => {
         let artists = playlist.songs[i].artists
 
         if (songName.toLowerCase().includes(input.value.toLowerCase()) === true) {
-            arr.push(playlist.songs[i]);
+          arr.push(playlist.songs[i]);
         }
         else {
           for (let j = 0; j < artists.length; j++){
@@ -131,16 +135,14 @@ input.addEventListener('input', () => {
 
     }
 
-    newPlayList['songs'] = arr;
-    newPlayList['name'] = playlist.name;
-    newPlayList['description'] = playlist.description;
+    newPlayList.songs = arr;
     render(newPlayList);
 
 });
 
 input.addEventListener('keydown', (event) => {
     if(event.key === 'Enter'){
-        input.value ='';
-        render(playlist);
+      input.value ='';
+      render(playlist);
     }
 });
