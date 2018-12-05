@@ -115,9 +115,6 @@ input.addEventListener('input', () => {
     };
 
     for (let i = 0; i < playlist.songs.length; i++) {
-      
-        let songName = playlist.songs[i].name;
-        let artists = playlist.songs[i].artists
 
         if (songName.toLowerCase().includes(input.value.toLowerCase()) === true) {
           arr.push(playlist.songs[i]);
