@@ -106,7 +106,7 @@ render(playlist);
 
 const input = document.querySelector('.js-input')
 
-input.addEventListener('input', () => {
+input.addEventListener('input', (e) => {
 
     let arr = [];
     let newPlayList = {
@@ -115,6 +115,9 @@ input.addEventListener('input', () => {
     };
 
     for (let i = 0; i < playlist.songs.length; i++) {
+
+        let songName = playlist.songs[i].name;
+        let artists = playlist.songs[i].artists
 
         if (songName.toLowerCase().includes(input.value.toLowerCase()) === true) {
           arr.push(playlist.songs[i]);
